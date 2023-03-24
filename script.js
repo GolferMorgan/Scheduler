@@ -22,8 +22,11 @@ $(function () {
   }
   setInterval(refreshTime, 1000);
 
-  document.getElementsByClassName("saveBtn").addEventListener("click", function() {
-    alert("appointment added to calendar")
+  // added the event listener for the save button
+  document.getElementById("saveBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("Appointment added to your calendar!");
+    console.log("you clicked the save button");
   });
 
   //
