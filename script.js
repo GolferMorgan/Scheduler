@@ -11,9 +11,9 @@ $(function () {
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
+  // useful when saving the description in local storage
   
-  //made the time work in real time
+  //made the date and time work in real time
   var timeDisplay = document.getElementById("time");
   function refreshTime() {
     var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
@@ -21,6 +21,10 @@ $(function () {
     timeDisplay.innerHTML = formattedString;
   }
   setInterval(refreshTime, 1000);
+
+  document.getElementsByClassName("saveBtn").addEventListener("click", function() {
+    alert("appointment added to calendar")
+  });
 
   //
   // TODO: Add code to apply the past, present, or future class to each time

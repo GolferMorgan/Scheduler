@@ -34,6 +34,8 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: center;
+  padding-top: 2rem;
 }
 
 .past {
@@ -50,8 +52,8 @@ textarea {
   background-color: #77dd77;
   color: white;
 }
-
-.saveBtn {
+/* adjusted the class to an id for save button */
+#saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -65,5 +67,12 @@ textarea {
 }
 /* set the time size */
 #time {
+  font-size: 2rem;
+}
+/* added footer with text and styling */
+footer {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-size: 2rem;
 }
