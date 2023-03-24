@@ -27,6 +27,8 @@ $(function () {
     event.preventDefault();
     alert("Appointment added to your calendar!");
     console.log("you clicked the save button");
+    localStorage.setItem("[]", event);
+    localStorage.getItem(event);
   });
 
   //
