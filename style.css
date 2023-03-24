@@ -1,3 +1,9 @@
+/* added color to the header to make it stand out more */
+header {
+  background-color: blue;
+  color: white;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -57,5 +63,7 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-
-
+/* set the time size */
+#time {
+  font-size: 2rem;
+}
