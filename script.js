@@ -13,11 +13,11 @@ $(function () {
   // useful when saving the description in local storage
   
   //made the date and time work in real time
-  var timeDisplay = document.getElementById("time");
+  var time = document.getElementById("time");
   function refreshTime() {
     var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
     var formattedString = dateString.replace(", ", " - ");
-    timeDisplay.innerHTML = formattedString;
+    time.innerHTML = formattedString;
   }
   setInterval(refreshTime, 1000);
 
@@ -25,7 +25,7 @@ $(function () {
   var saveAppInfo = {
     description: description.value,
   };
-// added the event listener for the save button
+  // added the event listener for the save button
   document.getElementById("saveBtn").addEventListener("click", function(event) {
     event.preventDefault();
     alert("Appointment added to your calendar!");
@@ -33,8 +33,8 @@ $(function () {
     localStorage.setItem("appointment", JSON.stringify(saveAppInfo));
     
   });
-
   
+
 
 
   //
