@@ -2,6 +2,8 @@
 header {
   background-color: blue;
   color: white;
+  border-bottom: 5px black;
+  text-align: center;
 }
 
 body {

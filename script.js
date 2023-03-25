@@ -12,14 +12,27 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage
   
-  //made the date and time work in real time
-  var time = document.getElementById("time");
-  function refreshTime() {
-    var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
-    var formattedString = dateString.replace(", ", " - ");
-    time.innerHTML = formattedString;
-  }
-  setInterval(refreshTime, 1000);
+  //made the date and time work 
+  var today = dayjs();
+  $('#time').text(today.format('MMM D, YYYY h:mm:ss'));
+
+  //trying to make hour blocks change colors
+  function today(){
+    $("#time").addClass((currentTime) => {
+      if (time > currentTime) {
+        setColor(row, "lightgreen");
+      }
+      else if (time == currentTime) {
+        setColor(row, "lightgrey");
+      }
+      else if (time < currentTime) {
+        setColor(row, "pink");
+      }
+    })
+  };
+
+
+
 
   //added variable for local storage to grab
   var saveAppInfo = {
