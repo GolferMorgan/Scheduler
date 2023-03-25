@@ -1,5 +1,4 @@
 
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -22,14 +21,21 @@ $(function () {
   }
   setInterval(refreshTime, 1000);
 
-  // added the event listener for the save button
+  //added variable for local storage to grab
+  var saveAppInfo = {
+    description: description.value,
+  };
+// added the event listener for the save button
   document.getElementById("saveBtn").addEventListener("click", function(event) {
     event.preventDefault();
     alert("Appointment added to your calendar!");
     console.log("you clicked the save button");
-    localStorage.setItem("[]", event);
-    localStorage.getItem(event);
+    localStorage.setItem("appointment", JSON.stringify(saveAppInfo));
+    
   });
+
+  
+
 
   //
   // TODO: Add code to apply the past, present, or future class to each time

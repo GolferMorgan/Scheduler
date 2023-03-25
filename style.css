@@ -39,17 +39,17 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: grey;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: red;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: green;
   color: white;
 }
 /* adjusted the class to an id for save button */
