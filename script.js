@@ -1,7 +1,4 @@
-
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+// Wrapped all code using document.reday function
 $(document).ready(function() {
 
 
@@ -12,77 +9,74 @@ $(document).ready(function() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage
 
-  //made the date and time 
+  //made the date and time show on page
   var today = dayjs();
-  $('#time').text(today.format('MMM D, YYYY h:mm:ss'));
-//create variables for time and value
-//use parent and sibling .siblings to target description .value
-//target the id of the parent
-//save the attributes into local storage
-//https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
-//show a notification the item was stored
-//set timeout function
-//load items from local storage getItem
-$('#9 #description').val(localStorage.getItem("9"))
-$('#10 #description').val(localStorage.getItem("10"))
-$('#11 #description').val(localStorage.getItem("11"))
-$('#12 #description').val(localStorage.getItem("12"))
-$('#13 #description').val(localStorage.getItem("13"))
-$('#14 #description').val(localStorage.getItem("14"))
-$('#15 #description').val(localStorage.getItem("15"))
-$('#16 #description').val(localStorage.getItem("16"))
-$('#17 #description').val(localStorage.getItem("17"))
+  $('#time').text(today.format('dddd, MMMM D h:mm:ss'));
+  //create variables for time and value
+  //use parent and sibling .siblings to target description .value
+  //target the id of the parent
+  //save the attributes into local storage
+  //https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
+    //added variable for local storage to grab
 
 
+  //show a notification the item was stored
+  //set timeout function for the notification
 
-  //trying to make hour blocks change colors
+  // made hour blocks change colors based on time of day
   function colorChange() {
     // creating variable for current number of hours
-    var currentTime = dayjs().hour()
+    var currentTime = dayjs().hour();
     // looping over the time blocks
     // giving jquery a target
-    $(".time-block").each(function () {
-      // created variable named hourIndex
+    $(".time-block").each(function() {
+      
       // used parseInt method to return an integer
       // this is an element that recieved a function
       // added attr method on the object
       // used split method to divide the strings into an ordered list
+      
+      // created variable named hourIndex
       var hourIndex = parseInt($(this).attr("id").split(" ")[1]);
       // if else logic lines
-      if (hourIndex > currentTime) {
-        $(this).addClass("future")
-      } else if (hourIndex === currentTime) {
-        $(this).removeClass("future")
-        $(this).addClass("present")
-      }
-      else {
-        $(this).removeClass("future")
-        $(this).removeClass("present")
+      if (hourIndex < currentTime) {
         $(this).addClass("past")
+      } else if (hourIndex === currentTime) {
+        $(this).removeClass("past")
+        $(this).addClass("present")
+      } else {
+        $(this).removeClass("past")
+        $(this).removeClass("present")
+        $(this).addClass("future")
       }
     })
   };
-//
-  colorChange();
+  // called the function and set the time interval
+  colorChange()
   setInterval(colorChange, 1000);
 
-  
+  //added event listener using jquery .on method
+  $(".saveBtn").on("click", function(){
+    var hours = $(this).parent().attr("id")
+    var input = $(this).siblings(".description").val();
+    // added local storage so it would save the hour and the data put into each hour
+    localStorage.setItem(hours, input);
+    alert("Your appointment has been saved!")
+    console.log(input);
+  })
+  //used jquery .each method
+  //added get method to local storage to pull information stored back out when page is refreshed
+  $(".row").each(function() {
+    //used same attribute as above in 
+    var content = $(this).attr("id")
+    var pullContent = localStorage.getItem(content)
+    //had to use .children instead of .siblings to get content to save and stay on page when refreshed
+    $(this).children(".description").text(pullContent)
+  })
 
 
 
-
-  //added variable for local storage to grab
-  // var saveAppInfo = {
-  //   description: description.value,
-  // };
-  // // added the event listener for the save button
-  // document.getElementById("saveBtn").addEventListener("click", function (event) {
-  //   event.preventDefault();
-  //   alert("Appointment added to your calendar!");
-  //   console.log("your appointment has been added");
-  //   localStorage.setItem("appointment", JSON.stringify(saveAppInfo));
-
-  // });
 
 
 
