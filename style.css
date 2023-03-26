@@ -41,12 +41,12 @@ textarea {
 }
 
 .past {
-  background-color: lightgrey;
+  background-color: pink;
   color: white;
 }
 
 .present {
-  background-color: pink;
+  background-color: lightgray;
   color: white;
 }
 
