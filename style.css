@@ -11,6 +11,9 @@ body {
   font-size: 16px;
 }
 
+.lead {
+  font-size: 2rem;
+}
 textarea {
   background: transparent;
   border: none;
@@ -36,8 +39,6 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  text-align: center;
-  padding-top: 2rem;
 }
 /* changed coloring to make text a little easier to read */
 .past {
