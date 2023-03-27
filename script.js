@@ -18,7 +18,7 @@ $(document).ready(function() {
       // added attr method on the object
       // used split method to divide the strings into an ordered list
       // created variable named hourIndex
-      var hourIndex = parseInt($(this).attr("id").split(" ")[1]);
+      var hourIndex = parseInt($(this).attr("id"));
       // if else logic lines
       if (hourIndex < currentTime) {
         $(this).addClass("past")
