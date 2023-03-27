@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   // made the date and time show on page
   var today = dayjs();
-  $('#time').text(today.format('dddd, MMMM D h:mm:ss'));
+  $('#time').text(today.format('dddd, MMMM D YYYY h:mm:ss'));
 
   // made hour blocks change colors based on time of day
   function colorChange() {
@@ -18,7 +18,7 @@ $(document).ready(function() {
       // added attr method on the object
       // used split method to divide the strings into an ordered list
       // created variable named hourIndex
-      var hourIndex = parseInt($(this).attr("id"));
+      var hourIndex = parseInt($(this).attr("id").split("hour")[1]);
       // if else logic lines
       if (hourIndex < currentTime) {
         $(this).addClass("past")
