@@ -18,8 +18,9 @@ $(document).ready(function() {
       // added attr method on the object
       // used split method to divide the strings into an ordered list
       // created variable named hourIndex
-      var hourIndex = parseInt($(this).attr("id").split("hour")[1]);
-      // if else logic lines
+      var hourIndex = parseInt($(this).attr("id").split("-")[1]);
+       console.log(hourIndex);
+      // if else logic lines to add and remove past, present and future
       if (hourIndex < currentTime) {
         $(this).addClass("past")
       } else if (hourIndex === currentTime) {
@@ -32,6 +33,7 @@ $(document).ready(function() {
       }
     })
   };
+
   // called the function and set the time interval
   colorChange()
   setInterval(colorChange, 1000);
