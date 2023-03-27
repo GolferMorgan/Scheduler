@@ -47,15 +47,14 @@ $(document).ready(function() {
     console.log(input);
   })
 
-  // used .time-block like the instructions said
   // used jquery .each method
   // added get method to local storage to pull information stored back out when page is refreshed
-  $(".time-block").each(function() {
+  $(".row").each(function() {
     // used same attribute as above 
-    var content = $(this).attr("id")
-    var pullContent = localStorage.getItem(content)
+    var saved = $(this).attr("id")
+    var pullSaved = localStorage.getItem(saved)
     // had to use .children instead of .siblings to get content to save and stay on page when refreshed
-    $(this).children(".description").text(pullContent)
+    $(this).children(".description").text(pullSaved)
   })
 
   
