@@ -11,3 +11,4 @@ GitHub repo: https://github.com/GolferMorgan/Scheduler
 
 ## Screenshot
 
+<img width="1655" alt="scheduler" src="https://user-images.githubusercontent.com/124836497/228077735-2575f65f-32c9-4e97-ad90-1b4efe449260.png">
