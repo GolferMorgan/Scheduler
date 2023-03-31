@@ -7,6 +7,8 @@ $(document).ready(function() {
 
   // made hour blocks change colors based on time of day
   function colorChange() {
+    var today = dayjs();
+    $('#time').text(today.format('dddd, MMMM D YYYY h:mm:ss'));
     // created variable for current number of hours
     var currentTime = dayjs().hour();
     // looping over the time blocks
